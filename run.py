@@ -19,28 +19,36 @@ welcome = input("Welcome to Python Wordl game! \n \n Instructions: \n \n You get
 
 #input to be displayed through out the game
 def game_display():
-    print('please guess a 5 letter word and press "Enter"!')
+    print('please guess a 5 letter word and press "Enter"!\n')
     
 
 game_display()
 
-for tries in range(1, 7):
-    guess = input().lower()
+replay_game = ""
+while replay_game != "q":
+    for tries in range(1, 7):
+        guess = input().lower()
 
-    if len(guess) > 5:
-        print(colored("Your word is too long, only 5 letters please!\n", 'red'), end="")
-    elif len(guess) < 5:
-        print(colored("Your word is too short, 5 letters please!\n", 'red'), end="")
-    if not guess.isalpha():
-        print(colored("Only letters are allowed!", 'red'), end="")
+        sys.stdout.write('\x1b[1A')
+        sys.stdout.write('\x1b[2K')
 
-    for i in range(5):
-        if guess[i] == word[i]:
-            print(colored(guess[i], 'green'), end="")
-        elif guess[i] in word:
-            print(colored(guess[i], 'yellow'), end="")
-        else:
-            print(guess[i], end="")
+        if len(guess) > 5:
+            print(colored("Your word is too long, only 5 letters please!\n", 'red'), end="")
+        elif len(guess) < 5:
+            print(colored("Your word is too short, 5 letters please!\n", 'red'), end="")
+        if not guess.isalpha():
+            print(colored("Only letters are allowed!", 'red'), end="")
+
+        for i in range(5):
+            if guess[i] == word[i]:
+                print(colored(guess[i], 'green'), end="")
+            elif guess[i] in word:
+                print(colored(guess[i], 'yellow'), end="")
+            else:
+                print(guess[i], end="")
+        print()
 
         if guess == word:
-            print(colored(f"Awsome! You gussed the the right word in {tries} tries.", 'red'))
+            print(colored(f"Awsome! You gussed the the right word in {tries} tries.", 'green'))
+            break
+    replay_game = print("Press 'Enter' to replay or to Quit game press 'q'")    
