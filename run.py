@@ -26,6 +26,7 @@ game_display()
 
 replay_game = ""
 while replay_game != "q":
+   
     for tries in range(1, 7):
         guess = input().lower()
 
@@ -52,6 +53,6 @@ while replay_game != "q":
             print(colored(f"Awsome! You gussed the the right word in {tries} tries.", 'green'))
             break
         elif tries == 6: 
-            print(colored("GAME OVER no more guesses!\n", 'red'), end="")
+            print(colored(f"GAME OVER no more guesses! The correct answer was {word}\n", 'red'), end="")
             break
     replay_game = print("Press 'Enter' to replay or to Quit game press 'q'")
