@@ -1,31 +1,58 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![responsive](images/responsive.jpg)
 
-Welcome USER_NAME,
+# LOVE_WORDLE GAME
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+LOVE_WORDLE is a word guessing game Welsh software engineer Josh Wardle that gained alot of traction when it was published in the New York times. 
 
-## Reminders
+## Rules
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+The game plot is easy and very straight forward. You get 6 attempts to guess the secret random 5 letter word. If your guess contains any letters of the secret word but with the wrong placement the letter will be highlighted in yellow. If the letter within the word you guessed has the right placemnet it will be highlighted in green.
 
-## Creating the Heroku app
+## Features
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+The LOVE_WORLDE game has three diffrent colors using the termcolor module for ANSII Color formatting for output in the terminal. Red, green and Yellow is very intuitive colors that gives clear signals to the user and a nice contrast.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+The user is alerted when inputing the wrong number of characters, too short and too long. The user even gets a message if trying to input non aphabetical character.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+The LOVE_WORDLE game starts of with a message on the screen displaying the rules in 4 lines. Very easy to read and understand. The user is instructed to press 'enter' to exit the rules screen and begin playing the game.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+When the game is over the user is presented with the option to quit the game or play again with the press of a key. (currently bug.)
 
-Connect your GitHub repository and deploy as normal.
+For the duration of the game the user is promted to input a word with a message of 'please guess a 5 letter word and press "Enter"'
 
-## Constraints
+## Bugs and Testing 
+![testing](images/pythonchecker.jpg)
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+### Testing
+In Python checker it got 10 errors. Most of them where to long lines of code and white space around operators, even though it was not operators. 
 
+In console it warned for 10 problems:
+
+![testing](images/console_problems.jpg)
+
+
+### Known bugs
+- Exits the game when the guess input exceeds 5 letters
+- Does not restart the game with the game start message 
+- Highlights a letter in yellow if yout guess contains more than two and the word only contians one instance of that letter.
+- not able to press "Q" to brake the loop.
+
+## Future features
+
+To fix the already mentioned bugs would enhace the experience. I had them working at one point but when formatted the code it started to throw errors.
+
+## Credits
+
+credits to my mentor Mitko that helped me come up with the idea of a word guessing game and provided me with resources for how to go about wireframing the functions:
+![testing](images/wireframeish.jpg)
+
+a big shout out to: 
+https://www.freecodecamp.org/news/how-to-build-a-wordle-clone-using-python-and-rich/
+
+I got alot of help from especially with the function for comparing and printing out the guess letters with the words letter and sys module in phyton to get the cursor on the next line and getting the while loop to work:
+https://replit.com/@JacobLower3/wordle-tutorial#main.py
+
+the colors idea from:
+https://ozzmaker.com/add-colour-to-text-in-python/
 -----
 Happy coding!
