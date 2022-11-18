@@ -34,12 +34,12 @@ while replay_game != "q":
 
         if len(guess) > 5:
             print(colored("Your word is too long, only 5 letters please!\n", 'red'), end="")
-        elif len(guess) < 5:
+        if len(guess) < 5:
             print(colored("Your word is too short, 5 letters please!\n", 'red'), end="")
         if not guess.isalpha():
             print(colored("Only letters are allowed!", 'red'), end="")
 
-        for i in range(len(guess), len(guess)):
+        for i in range(len(guess)):
             if guess[i] == word[i]:
                 print(colored(guess[i], 'green'), end="")
             elif guess[i] in word:
