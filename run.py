@@ -1,7 +1,7 @@
 #Imports
 import random
 import sys
-from termcolor import colored
+from termcolor import colored, cprint
 from list import word_list
 
 
